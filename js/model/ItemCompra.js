@@ -1,7 +1,7 @@
-var ItemCompra = function() {
+var ItemCompra = function(produto, quantidade) {
 	
-	this.produto = null;
-	this.quantidade;
+	this.produto = produto;
+	this.quantidade = quantidade;
 }
 
 ItemCompra.prototype = {
