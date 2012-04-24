@@ -28,6 +28,31 @@ T2.prototype.include = function(array){
 		console.log(e.toString());
 	}
 
-	
 
 }
+/*
+** para chamar eventos crossBrowser
+** exemplo: T2.eventCross.addHandler(botaoId, "click", function(){} )
+*/
+
+T2.prototype.eventCross = {
+	addHandler: function(element, type, handler){
+		if(element.addEventListener){
+			element.addEventListener(type, handler, false);
+		} else if(element.attachEvent){
+			element.attachEvent("on"+type, handler);
+		} else{
+			element["on"+type] = handler;
+		}
+	},
+
+	removeHandler: function(){
+		if(element.removeEventListener){
+			element.removeEventListener(type, handler, false);
+		} else if(element.detachEvent){
+			element.detachEvent("on"+type, handler);
+		} else{
+			element["on"+type] = null;
+		}
+	}
+};
