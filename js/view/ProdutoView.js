@@ -22,19 +22,20 @@ p2.preco = 12.00;
 
 
 var item1 = new ItemCompra(p,4);
-var item2 = new ItemCompra(p1,3);
+var item2 = new ItemCompra(p1,2);
 var item3 = new ItemCompra(p2,5);
 //console.log(item1.produto.codigo)
 
 var carrinhoDao = new CarrinhoDAO();
-carrinhoDao.incluir(item1);
+//carrinhoDao.incluir(item1);
+//carrinhoDao.limpar();
 //carrinhoDao.incluir(item2);
 //carrinhoDao.incluir(item3);
 
 var carrinho = new Carrinho();
-carrinhoDao.incluir();
-//console.log(carrinho);
-//console.log(JSON.stringify(carrinho));
+//carrinho.incluir(item2);
+//console.log(carrinho.incluir(item3));
+//console.log(carrinho.qtdProdutos());
 
 //var carrinhoString = JSON.stringify(carrinho);
 //carrinho = JSON.parse(carrinhoString);

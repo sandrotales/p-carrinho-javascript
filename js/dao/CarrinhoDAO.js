@@ -9,10 +9,11 @@ var CarrinhoDAO = function() {
 CarrinhoDAO.prototype = {
 
 	verificar: function(itemCompra){
-		var storage = localStorage.getObject(this.key);
-		var flag = false;
+		var storage = localStorage.getObject(this.key),
+		flag = false,
+		objProduto = itemCompra.produto || {};
 		for (var i = 0; i < storage.length; i++) {
-			if(storage[i].produto.codigo == itemCompra.produto.codigo){
+			if(storage[i].produto.codigo == objProduto.codigo){
 				flag = true;
 			}
 		}
@@ -20,18 +21,28 @@ CarrinhoDAO.prototype = {
 	},
 
 	incluir: function(itemCompra){
-		var storage = localStorage.getObject(this.key);
-		if(storage!=null){
-			this.itemCompraList = storage;
-			if(!this.verificar(itemCompra)){
-				this.itemCompraList.push(itemCompra);
-			}else{
-				alert("Produto ja inserido");
-			}
-		}else{
-			this.itemCompraList.push(itemCompra);
+		
+		if ( typeof itemCompra != "object") {
+			return false;
 		}
-		localStorage.setObject(this.key, this.itemCompraList);	
+		try{
+
+			var storage = localStorage.getObject(this.key);
+			if(storage!=null){
+				this.itemCompraList = storage;
+				if(!this.verificar(itemCompra)){
+					this.itemCompraList.push(itemCompra);
+				}else{
+					alert("Produto ja inserido. Aumente a quantidade no carrinho de compras.");
+				}
+			}else{
+				this.itemCompraList.push(itemCompra);
+			}
+			localStorage.setObject(this.key, this.itemCompraList);
+			return itemCompra;	
+		}catch(e){
+			console.log(e.toString());
+		}
 	},
 
 	excluir: function(itemCompra){
@@ -72,7 +83,8 @@ CarrinhoDAO.prototype = {
 				}
 			}
 			
-			localStorage.setObject(this.key, this.itemCompraList);	
+			localStorage.setObject(this.key, this.itemCompraList);
+			return itemCompra;		
 		}
 	}
 	

@@ -7,33 +7,30 @@ Carrinho.prototype = {
 
 	dao: new CarrinhoDAO(),
 	
-	incluir: function(){
-		console.log(this.dao);
-		
+	incluir: function(itemCompra){
+		itemCompra = this.dao.incluir(itemCompra) || {};
+		return itemCompra;
 	},
 
-	excluir: function(){
-		var dao = new CarrinhoDAO();
-		
+	excluir: function(itemCompra){
+		return this.dao.excluir(itemCompra);
 	},
 
 	listar: function(){
-		var dao = new CarrinhoDAO();
-		
+		return this.dao.listar();
 	},
 
 	limpar: function(){
-		var dao = new CarrinhoDAO();
-		
+		this.dao.limpar();
 	},
 
 	qtdProdutos: function(){
-		var dao = new CarrinhoDAO();
-		
+		return this.dao.qtdProdutos();
 	},
 
-	alterar: function(){
-		var dao = new CarrinhoDAO();
+	alterar: function(itemCompra){
+		itemCompra = this.dao.alterar(itemCompra) || {};
+		return itemCompra;
 	}
 
 };
