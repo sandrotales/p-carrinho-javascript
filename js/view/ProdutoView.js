@@ -46,3 +46,36 @@ var carrinho = new Carrinho();
 
 //};
 
+var produtos = [
+	{
+		codigo: 1,
+		nome: "Caixa",
+		preco: 5.00
+	},
+	{
+		codigo: 2,
+		nome: "Sapato",
+		preco: 15.00
+	},
+	{
+		codigo: 3,
+		nome: "Camisa",
+		preco: 20.00
+	},
+	{
+		codigo: 4,
+		nome: "Televisão",
+		preco: 500.00
+	}
+];
+
+var ProdutoView = function(produtos){
+	
+}
+
+var ProdutoView = {
+	dipatcher: function(){
+		var ul = document.CreateElement("ul");
+	}
+};
+
