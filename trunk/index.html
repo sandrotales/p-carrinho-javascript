@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
         <title>estudo composite javascript</title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
 
@@ -10,28 +10,62 @@
          
 		<style>
 			
-			.composite-gallery {
-				
-				width: 50%;
-				
-				margin: 0 auto;
-				border:1px solid #000;
-				background: #fff;
-				padding: 20px;
-				font-family: helvetica, arial, sans-serif;
-				font-size: 10pt;
-				line-height: 16pt;
-				
+			
+			#produtos ul li{
+				list-style:none;
+				border: 1px solid #999;
+				padding: 10px;
 			}
+
 
 			
 		</style>
 	</head>
     <body>
     	
-    	<script type="text/javascript">
-    		
-    	</script>		
+    	<div id="carrinho_div">
+    		<h2>Carrinho</h2>
+			<table id="carrinho" border="1">
+				<thead>
+					<tr>
+						<th>Codigo</th>
+						<th>Nome Produto</th>
+						<th>Preço</th>
+						<th>Quantidade</th>
+						<th>Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+    	</div>	
+    	
+    	<hr/>
+    	<br/>
+    	<h2>Produtos</h2>
+    	<div id="produtos">
+    		<ul>
+    			<li>
+    				<h4>Codigo:1</h4>
+    				<h2>Camisa Polo</h2>
+    				<h3>preço: R$ 50.00</h3>
+    				<button type="button">Comprar</button>
+    				<input type="hidden" id="codigo" value="1">
+    				<input type="hidden" id="nome" value="Camisa Polo">
+    				<input type="hidden" id="preco" value="50.00">
+    			</li>
+    			<li>
+    				<h4>Codigo:2</h4>
+    				<h2>Camiseta Regata</h2>
+    				<h3>preço: R$ 30.00</h3>
+    				<button type="button">Comprar</button>
+    				<input type="hidden" id="codigo" value="2">
+    				<input type="hidden" id="nome" value="Camiseta Regata">
+    				<input type="hidden" id="preco" value="30.00">
+    			</li>
+    		</ul>
+    	</div>	
 	   
     </body>
 </html>
