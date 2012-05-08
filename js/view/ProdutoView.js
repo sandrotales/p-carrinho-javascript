@@ -1,3 +1,18 @@
+
+
+var ProdutoView = function(produtos){
+	
+}
+
+var ProdutoView = {
+	dipatcher: function(){
+		var ul = document.CreateElement("ul");
+	}
+};
+
+
+
+
 var t2 = new T2();
 
 
@@ -68,14 +83,4 @@ var produtos = [
 		preco: 500.00
 	}
 ];
-
-var ProdutoView = function(produtos){
-	
-}
-
-var ProdutoView = {
-	dipatcher: function(){
-		var ul = document.CreateElement("ul");
-	}
-};
 

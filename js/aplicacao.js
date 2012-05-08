@@ -1,3 +1,4 @@
+//carrengando arquivos da aplicação
 var t2 = new T2();
 t2.include(
 	[
@@ -5,10 +6,10 @@ t2.include(
 		"model.Carrinho",
 		"model.Produto",
 		"model.ItemCompra",
-		"view.ProdutoView"
+		"view.ProdutoView",
+		"view.CarrinhoView"
 	]
 );
 
 
 
-//teste de criação de objeto
