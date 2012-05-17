@@ -34,6 +34,7 @@ CarrinhoDAO.prototype = {
 					this.itemCompraList.push(itemCompra);
 				}else{
 					alert("Produto ja inserido. Aumente a quantidade no carrinho de compras.");
+					itemCompra = null;
 				}
 			}else{
 				this.itemCompraList.push(itemCompra);
