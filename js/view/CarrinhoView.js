@@ -5,12 +5,14 @@ var CarrinhoView = function(){
 CarrinhoView.prototype.listar = function() {
 	var c = new Carrinho();
 	arrayItemCompra = c.listar();
-	$.each(arrayItemCompra, function(k,itemCompra){
-		var tr = "<tr id='"+itemCompra.produto.codigo+"'><td>"+itemCompra.produto.codigo+"</td><td>"+itemCompra.produto.nome+"</td><td>R$ "+itemCompra.produto.preco+"</td>";
-		tr += "<td><input type='text' id='quantidade' value='"+itemCompra.quantidade+"' size='3' /></td>";
-		tr += "<td><button id='atualizar'>Atualizar</button><button id='excluir'>Excluir</button></td></tr>";
-		$(tr).appendTo("#carrinho tbody");
-	});
+	if(arrayItemCompra != null){
+		$.each(arrayItemCompra, function(k,itemCompra){
+			var tr = "<tr id='"+itemCompra.produto.codigo+"'><td>"+itemCompra.produto.codigo+"</td><td>"+itemCompra.produto.nome+"</td><td>R$ "+itemCompra.produto.preco+"</td>";
+			tr += "<td><input type='text' id='quantidade' value='"+itemCompra.quantidade+"' size='3' /></td>";
+			tr += "<td><button id='atualizar'>Atualizar</button><button id='excluir'>Excluir</button></td></tr>";
+			$(tr).appendTo("#carrinho tbody");
+		});
+	}
 }; 
 
 CarrinhoView.prototype.incluir = function(codigo, nome, preco) {
